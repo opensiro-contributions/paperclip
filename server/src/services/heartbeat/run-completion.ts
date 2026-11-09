@@ -1371,7 +1371,8 @@ export function createHeartbeatRunCompletion(db: Db, dependencies: HeartbeatRunC
     // The inner catch did not fire, so we must record the failure here.
     const providerFailure = providerFailureFromError(outerErr);
     const currentUserRedactionOptions = await getCurrentUserRedactionOptions();
-    const message = redactCurrentUserText(
+    const storageUnavailable = isStorageUnavailableError(outerErr);
+    const message = storageUnavailable ? STORAGE_UNAVAILABLE_MESSAGE : redactCurrentUserText(
       identityRedactor.redact(outerErr instanceof Error
         ? outerErr.message
         : "Unknown setup failure"),
@@ -1457,6 +1458,7 @@ export function createHeartbeatRunCompletion(db: Db, dependencies: HeartbeatRunC
         : null) ??
       recordedResponsibleUserDenialCode ??
       nonRetryablePreflightCode ??
+      (storageUnavailable ? STORAGE_UNAVAILABLE_CODE : null) ??
       "setup_failed";
     // Bounded kind and reason only: a workspace provider's own text never crosses into Core.
     const workspaceProviderFailure = findWorkspaceProviderFailure(outerErr)?.summary() ?? null;
@@ -1567,6 +1569,7 @@ export function createHeartbeatRunCompletion(db: Db, dependencies: HeartbeatRunC
       const livenessRun = await classifyAndPersistRunLiveness(
         failedRun,
       ).catch(() => failedRun);
+      let storageWaitScheduled = false;
       const setupFailureIssueId = readNonEmptyString(
         parseObject(livenessRun.contextSnapshot).issueId,
       );
@@ -1624,7 +1627,7 @@ export function createHeartbeatRunCompletion(db: Db, dependencies: HeartbeatRunC
             || livenessRun.errorCode === REPOSITORY_CATALOG_UNAVAILABLE_CODE
             || livenessRun.errorCode === REVIEWED_CHAT_BINDING_NOT_READY)
             && isResolvedInteractionContinuationWakeContext(livenessRun.contextSnapshot);
-          await (isTransientWorkspacePreparationCode(livenessRun.errorCode) && !interactionOwnsRetry
+          const setupRetry = await (isTransientWorkspacePreparationCode(livenessRun.errorCode) && !interactionOwnsRetry
             ? livenessRun.errorCode === RUNNER_REVISION_MISMATCH_CODE
               ? scheduleBoundedRetryForRun(livenessRun, failedAgent, RUNNER_REVISION_MISMATCH_RETRY)
               : livenessRun.errorCode === STORAGE_UNAVAILABLE_CODE
@@ -1636,11 +1639,13 @@ export function createHeartbeatRunCompletion(db: Db, dependencies: HeartbeatRunC
               { err: retryError, runId: livenessRun.id },
               "failed to schedule interaction continuation retry after setup failure",
             );
+            return null;
           });
+          storageWaitScheduled = livenessRun.errorCode === STORAGE_UNAVAILABLE_CODE && setupRetry?.outcome === "scheduled";
         }
       }
       await releaseIssueExecutionAndPromote(livenessRun, {
-        suppressImmediateRecovery:
+        suppressImmediateRecovery: storageWaitScheduled ||
           readNonEmptyString(
             parseObject(livenessRun.contextSnapshot).goalControlRequestId,
           ) !== null ||
