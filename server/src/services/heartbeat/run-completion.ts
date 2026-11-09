@@ -1441,6 +1441,7 @@ export function createHeartbeatRunCompletion(db: Db, dependencies: HeartbeatRunC
       && run.nativeSessionId === null && run.runnerInstanceId === null && isRunnerRevisionMismatch(outerErr);
     const setupFailureErrorCode =
       (controllerLeaseLost ? CONTROLLER_LEASE_LOST_FAILURE_CODE : null) ??
+      (storageUnavailable ? STORAGE_UNAVAILABLE_CODE : null) ??
       remoteWorkspacePreparationTimeout?.code ??
       reusableSandboxResumeFailure?.code ??
       remoteWorkspaceRestoreFailure?.code ??
@@ -1458,7 +1459,6 @@ export function createHeartbeatRunCompletion(db: Db, dependencies: HeartbeatRunC
         : null) ??
       recordedResponsibleUserDenialCode ??
       nonRetryablePreflightCode ??
-      (storageUnavailable ? STORAGE_UNAVAILABLE_CODE : null) ??
       "setup_failed";
     // Bounded kind and reason only: a workspace provider's own text never crosses into Core.
     const workspaceProviderFailure = findWorkspaceProviderFailure(outerErr)?.summary() ?? null;
