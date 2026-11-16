@@ -15,13 +15,13 @@
     "reviewed_at": "2026-09-18",
     "assessed_source_revision": "352153b5edf02ff4262210c7bd5bfa94bcf37c7c"
   },
-  "work_state": "BUILD",
-  "next_action": "Native test and typecheck; then prepare fork-local PR review. No external publication without exact consent.",
+  "work_state": "RESEARCH",
+  "next_action": "Existing decision-source branch is unqualified for S5 until strategic parent-authority capability delta and maintainer predesign are established; preserve code and use source-backed static review. Native tests NOT RUN. No fork-local/external PR before qualification and exact consent.",
   "source_revision": "20b0d4e5a51f9b730721dc5078cc74f2f21eec60",
   "native_evidence": [],
   "work_branches": [
     "https://github.com/opensiro-contributions/paperclip/tree/feat/approval-decision-source-s5"
   ],
   "external_prs": [],
-  "last_event_id": "2026-11-16T164315Z--paperclip-s5-approval-origin"
+  "last_event_id": "20261116T172448Z--paperclip-s5-source-preflight"
 }

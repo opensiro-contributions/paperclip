@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "20261116T172448Z--paperclip-s5-source-preflight",
+  "recorded_at": "2026-11-16T17:24:48Z",
+  "actor": "opensiro-ai-assistant",
+  "kind": "CHECKPOINT",
+  "contribution_id": "paperclip-s5-approval-decision-source",
+  "evidence_urls": [
+    "https://github.com/paperclipai/paperclip/issues/18296",
+    "https://github.com/paperclipai/paperclip/blob/93111b175ba07ff4f1536f2bbc574c8edf8ad549/server/src/routes/approvals.ts",
+    "https://github.com/paperclipai/paperclip/blob/93111b175ba07ff4f1536f2bbc574c8edf8ad549/server/src/services/plugin-host-services.ts",
+    "https://github.com/paperclipai/paperclip/blob/93111b175ba07ff4f1536f2bbc574c8edf8ad549/docs/guides/board-operator/approvals.md",
+    "https://github.com/opensiro-contributions/paperclip/commit/cfc3682eecb1a8e5195ddffceae58b7da820227d"
+  ],
+  "note": "Source-first S5 review: the existing decision_source implementation adds attribution but not enforced parent decision authority or changed strategic governance; do not present it as a qualified S5 Upgrade or review PR. A selective session-only/authorized-decider policy for approve_ceo_strategy is supported as a source-native need by issue #18296, but the broader effectful change requires maintainer design alignment and a defensible native route. User prefers no direct VSM-function end-to-end execution; no native checks executed in this checkpoint.",
+  "next_action": "Keep S5 scope fixed to paperclipai/paperclip. Verify competing PR overlap, design a board-selected strategy-decision authority restriction with REST/plugin bypass closure, check maintainer #dev predesign approval. Preserve existing work branch, no fork-local/external PR without exact consent."
+}
