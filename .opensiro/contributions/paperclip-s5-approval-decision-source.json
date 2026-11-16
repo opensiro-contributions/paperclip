@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "id": "paperclip-s5-approval-decision-source",
+  "original_repository": "paperclipai/paperclip",
+  "title": "Persist trustworthy board approval decision source",
+  "contribution_type": "ASSESSMENT_INFORMED",
+  "classification_rationale": "The September 2026 pinned VSM assessment records legitimate parent-board S5 authority. Paperclip issue 18296 and current source show that approval decisions do not retain their authentication source. The assessment informed this scope but did not predict the precise defect.",
+  "classification_evidence": [
+    "https://github.com/opensiro/vsm-harness-index/blob/ad65433f7508f91e40577b676cfd1275dbcd0087/assessments/pa/paperclip.md",
+    "https://github.com/paperclipai/paperclip/issues/18296",
+    "https://github.com/paperclipai/paperclip/blob/20b0d4e5a51f9b730721dc5078cc74f2f21eec60/server/src/routes/approvals.ts"
+  ],
+  "assessment_pin": {
+    "url": "https://github.com/opensiro/vsm-harness-index/blob/ad65433f7508f91e40577b676cfd1275dbcd0087/assessments/pa/paperclip.md",
+    "reviewed_at": "2026-09-18",
+    "assessed_source_revision": "352153b5edf02ff4262210c7bd5bfa94bcf37c7c"
+  },
+  "work_state": "BUILD",
+  "next_action": "Native test and typecheck; then prepare fork-local PR review. No external publication without exact consent.",
+  "source_revision": "20b0d4e5a51f9b730721dc5078cc74f2f21eec60",
+  "native_evidence": [],
+  "work_branches": [
+    "https://github.com/opensiro-contributions/paperclip/tree/feat/approval-decision-source-s5"
+  ],
+  "external_prs": [],
+  "last_event_id": "2026-11-16T164315Z--paperclip-s5-approval-origin"
+}
