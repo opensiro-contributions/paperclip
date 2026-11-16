@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "2026-11-16T164315Z--paperclip-s5-approval-origin",
+  "recorded_at": "2026-11-16T16:43:15Z",
+  "actor": "opensiro-owner-requested-upgrade",
+  "kind": "DECISION",
+  "contribution_id": "paperclip-s5-approval-decision-source",
+  "decision": "ALLOW",
+  "evidence_urls": [
+    "https://github.com/opensiro/vsm-harness-index/blob/ad65433f7508f91e40577b676cfd1275dbcd0087/assessments/pa/paperclip.md",
+    "https://github.com/paperclipai/paperclip/issues/18296"
+  ],
+  "next_action": "Execute user-requested Paperclip S5 improvement; exact third-party and fork-local PR publication remain gated."
+}
