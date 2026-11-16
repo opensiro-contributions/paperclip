@@ -27,6 +27,7 @@ export function approvalResolutionRecords(db: Db) {
     decidedByUserId: string,
     decisionNote: string | null | undefined,
     database: Db = db,
+    decisionSource: string | null = null,
   ): Promise<ResolutionResult> {
     const existing = await getExistingApproval(id, database);
     if (!canResolveStatuses.has(existing.status)) {
@@ -45,6 +46,7 @@ export function approvalResolutionRecords(db: Db) {
       .set({
         status: targetStatus,
         decidedByUserId,
+        decisionSource,
         decisionNote: decisionNote ?? null,
         decidedAt: now,
         updatedAt: now,

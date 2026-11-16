@@ -18,7 +18,7 @@ type HireDecisionResult = {
 
 export function hireApprovalService(db: Db, effects: LifecycleEffects) {
   const { getExistingApproval, resolveApproval } = approvalResolutionRecords(db);
-  async function decide(target: HireDecisionTarget, status: "approved" | "rejected", userId: string, note?: string | null): Promise<HireDecisionResult | null> {
+  async function decide(target: HireDecisionTarget, status: "approved" | "rejected", userId: string, note?: string | null, decisionSource: string | null = null): Promise<HireDecisionResult | null> {
     const initial = typeof target === "string"
       ? await agentRecords(db, effects).getById(target)
       : await getExistingApproval(target.approvalId);
@@ -40,7 +40,7 @@ export function hireApprovalService(db: Db, effects: LifecycleEffects) {
       let approval: typeof approvals.$inferSelect | null = null;
       let applied = true;
       if (approvalId) {
-        const result = await resolveApproval(approvalId, status, userId, note, tx);
+        const result = await resolveApproval(approvalId, status, userId, note, tx, decisionSource);
         approval = result.approval;
         applied = result.applied;
       }

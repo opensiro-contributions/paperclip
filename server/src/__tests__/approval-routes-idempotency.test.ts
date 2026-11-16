@@ -263,7 +263,47 @@ describe("approval routes idempotent retries", () => {
       .send({ decidedByUserId: "forged-user", decisionNote: "ship it" });
 
     expect(res.status).toBe(200);
-    expect(mockApprovalService.approve).toHaveBeenCalledWith("approval-4", "user-1", "ship it");
+    expect(mockApprovalService.approve).toHaveBeenCalledWith("approval-4", "user-1", "ship it", "session");
+  });
+
+  it("persists the board credential source without inventing a user identity", async () => {
+    mockApprovalService.getById.mockResolvedValue({
+      id: "approval-key",
+      companyId: "company-1",
+      type: "budget_override_required",
+      status: "pending",
+      payload: {},
+      requestedByAgentId: null,
+    });
+    mockApprovalService.approve.mockResolvedValue({
+      approval: {
+        id: "approval-key",
+        companyId: "company-1",
+        type: "budget_override_required",
+        status: "approved",
+        payload: {},
+        requestedByAgentId: null,
+        decisionSource: "board_key",
+      },
+      applied: true,
+    });
+
+    const res = await request(await createApp({ source: "board_key", userId: null }))
+      .post("/api/approvals/approval-key/approve")
+      .send({ decisionNote: "approved by automation" });
+
+    expect(res.status).toBe(200);
+    expect(res.body.decisionSource).toBe("board_key");
+    expect(mockApprovalService.approve).toHaveBeenCalledWith(
+      "approval-key", "board", "approved by automation", "board_key",
+    );
+    expect(mockLogActivity).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({
+        action: "approval.approved",
+        details: expect.objectContaining({ decisionSource: "board_key" }),
+      }),
+    );
   });
 
   it("derives approval attribution from the authenticated actor on reject", async () => {
@@ -290,7 +330,7 @@ describe("approval routes idempotent retries", () => {
       .send({ decidedByUserId: "forged-user", decisionNote: "not now" });
 
     expect(res.status).toBe(200);
-    expect(mockApprovalService.reject).toHaveBeenCalledWith("approval-5", "user-1", "not now");
+    expect(mockApprovalService.reject).toHaveBeenCalledWith("approval-5", "user-1", "not now", "session");
   });
 
   it("derives approval attribution from the authenticated actor on request revision", async () => {
@@ -318,6 +358,7 @@ describe("approval routes idempotent retries", () => {
       "approval-6",
       "user-1",
       "Need changes",
+      "session",
     );
   });
 

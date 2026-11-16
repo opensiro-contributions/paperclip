@@ -15,6 +15,7 @@ export const approvals = pgTable(
     payload: jsonb("payload").$type<Record<string, unknown>>().notNull(),
     decisionNote: text("decision_note"),
     decidedByUserId: text("decided_by_user_id"),
+    decisionSource: text("decision_source"),
     decidedAt: timestamp("decided_at", { withTimezone: true }),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),

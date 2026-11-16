@@ -74,6 +74,7 @@ export function approvalRecords(db: Db) {
         return tx.update(approvals)
         .set({
           status: "cancelled",
+          decisionSource: null,
           decisionNote: reason ?? null,
           ...(options.cancelledByUserId ? { decidedByUserId: options.cancelledByUserId } : {}),
           decidedAt: now,
@@ -86,7 +87,7 @@ export function approvalRecords(db: Db) {
       return updated;
     },
 
-    requestRevision: async (id: string, decidedByUserId: string, decisionNote?: string | null) => {
+    requestRevision: async (id: string, decidedByUserId: string, decisionNote?: string | null, decisionSource: string | null = null) => {
       const existing = await getExistingApproval(id);
       if (existing.status !== "pending") {
         throw unprocessable("Only pending approvals can request revision");
@@ -98,6 +99,7 @@ export function approvalRecords(db: Db) {
         .set({
           status: "revision_requested",
           decidedByUserId,
+          decisionSource,
           decisionNote: decisionNote ?? null,
           decidedAt: now,
           updatedAt: now,
@@ -121,6 +123,7 @@ export function approvalRecords(db: Db) {
           payload: payload ?? existing.payload,
           decisionNote: null,
           decidedByUserId: null,
+          decisionSource: null,
           decidedAt: null,
           updatedAt: now,
         })
@@ -179,9 +182,9 @@ export function approvalService(db: Db) {
     await builtInAgentService(database).ensure(companyId, sourceBuiltInAgentKey);
   }
 
-  async function decideHire(target: string | { approvalId: string }, status: "approved" | "rejected", userId: string, note?: string | null) {
+  async function decideHire(target: string | { approvalId: string }, status: "approved" | "rejected", userId: string, note?: string | null, decisionSource: string | null = null) {
     const lifecycle = createAgentLifecycle(db);
-    const result = await (status === "approved" ? lifecycle.approveHire : lifecycle.rejectHire)(target, userId, note);
+    const result = await (status === "approved" ? lifecycle.approveHire : lifecycle.rejectHire)(target, userId, note, decisionSource);
     if (result?.hireApprovedAgentId && result.approval) {
       await reconcileApprovedBuiltInAgent(result.approval.companyId, result.approval.payload, db);
       void notifyHireApproved(db, { companyId: result.approval.companyId, agentId: result.hireApprovedAgentId,
@@ -190,18 +193,18 @@ export function approvalService(db: Db) {
     return result;
   }
 
-  async function decide(id: string, status: "approved" | "rejected", userId: string, note?: string | null) {
+  async function decide(id: string, status: "approved" | "rejected", userId: string, note?: string | null, decisionSource: string | null = null) {
     const approval = await getExistingApproval(id);
     if (approval.type === "hire_agent") {
-      const result = await decideHire({ approvalId: id }, status, userId, note);
+      const result = await decideHire({ approvalId: id }, status, userId, note, decisionSource);
       return { approval: result!.approval!, applied: result!.applied };
     }
-    return resolveApproval(id, status, userId, note);
+    return resolveApproval(id, status, userId, note, db, decisionSource);
   }
   return { ...records,
     approveHire: (agentId: string, userId: string, note?: string | null) => decideHire(agentId, "approved", userId, note),
     rejectHire: (agentId: string, userId: string, note?: string | null) => decideHire(agentId, "rejected", userId, note),
-    approve: (id: string, userId: string, note?: string | null) => decide(id, "approved", userId, note),
-    reject: (id: string, userId: string, note?: string | null) => decide(id, "rejected", userId, note),
+    approve: (id: string, userId: string, note?: string | null, decisionSource: string | null = null) => decide(id, "approved", userId, note, decisionSource),
+    reject: (id: string, userId: string, note?: string | null, decisionSource: string | null = null) => decide(id, "rejected", userId, note, decisionSource),
   };
 }

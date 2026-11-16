@@ -10,6 +10,7 @@ export interface Approval {
   payload: Record<string, unknown>;
   decisionNote: string | null;
   decidedByUserId: string | null;
+  decisionSource: string | null;
   decidedAt: Date | null;
   createdAt: Date;
   updatedAt: Date;

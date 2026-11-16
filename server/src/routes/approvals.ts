@@ -468,7 +468,7 @@ export function approvalRoutes(
     const decidedByUserId = req.actor.userId ?? "board";
     // Who the card was for, read before the decision (PAP-749 plan §6).
     const handledFor = await approvalHandledFor(id, req.actor.userId);
-    const { approval, applied } = await svc.approve(id, decidedByUserId, req.body.decisionNote);
+    const { approval, applied } = await svc.approve(id, decidedByUserId, req.body.decisionNote, getActorInfo(req).actorSource);
 
     if (applied) {
       const linkedIssues = await issueApprovalsSvc.listIssuesForApproval(approval.id);
@@ -490,6 +490,7 @@ export function approvalRoutes(
           type: approval.type,
           requestedByAgentId: approval.requestedByAgentId,
           linkedIssueIds,
+          decisionSource: getActorInfo(req).actorSource,
           ...attentionHandledDetails(handledFor, "approved"),
         },
       });
@@ -586,7 +587,7 @@ export function approvalRoutes(
     }
     const decidedByUserId = req.actor.userId ?? "board";
     const handledFor = await approvalHandledFor(id, req.actor.userId);
-    const { approval, applied } = await svc.reject(id, decidedByUserId, req.body.decisionNote);
+    const { approval, applied } = await svc.reject(id, decidedByUserId, req.body.decisionNote, getActorInfo(req).actorSource);
 
     if (applied) {
       const linkedIssues = await issueApprovalsSvc.listIssuesForApproval(approval.id);
@@ -598,7 +599,7 @@ export function approvalRoutes(
         action: "approval.rejected",
         entityType: "approval",
         entityId: approval.id,
-        details: { type: approval.type, ...attentionHandledDetails(handledFor, "rejected", { reason: req.body.decisionNote }) },
+        details: { type: approval.type, decisionSource: getActorInfo(req).actorSource, ...attentionHandledDetails(handledFor, "rejected", { reason: req.body.decisionNote }) },
       });
       await queueAdditionalApprovalReviewPathWakes({
         approvalId: approval.id,
@@ -625,7 +626,7 @@ export function approvalRoutes(
       }
       const decidedByUserId = req.actor.userId ?? "board";
       const handledFor = await approvalHandledFor(id, req.actor.userId);
-      const approval = await svc.requestRevision(id, decidedByUserId, req.body.decisionNote);
+      const approval = await svc.requestRevision(id, decidedByUserId, req.body.decisionNote, getActorInfo(req).actorSource);
 
       await logActivity(db, {
         companyId: approval.companyId,
@@ -636,6 +637,7 @@ export function approvalRoutes(
         entityId: approval.id,
         details: {
           type: approval.type,
+          decisionSource: getActorInfo(req).actorSource,
           ...attentionHandledDetails(handledFor, "revision_requested", { reason: req.body.decisionNote }),
         },
       });

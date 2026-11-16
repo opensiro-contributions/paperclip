@@ -72,8 +72,8 @@ export function createAgentLifecycle(db: Db, effects: LifecycleEffects) {
     if (result) scheduleAgentLifecycle(db, id);
     return result ? records.getById(id) : null;
   }
-  async function decideHire(target: HireDecisionTarget, decision: "approved" | "rejected", userId: string, note?: string | null) {
-    const result = await approvalRecords(db, effects).decide(target, decision, userId, note);
+  async function decideHire(target: HireDecisionTarget, decision: "approved" | "rejected", userId: string, note?: string | null, decisionSource: string | null = null) {
+    const result = await approvalRecords(db, effects).decide(target, decision, userId, note, decisionSource);
     if (result?.hireApprovedAgentId) scheduleAgentLifecycle(db, result.hireApprovedAgentId);
     return result;
   }
@@ -90,8 +90,8 @@ export function createAgentLifecycle(db: Db, effects: LifecycleEffects) {
       scheduleAgentLifecycle(db, agent.id);
       return agent;
     },
-    approveHire: (target: HireDecisionTarget, userId = "board", note?: string | null) => decideHire(target, "approved", userId, note),
-    rejectHire: (target: HireDecisionTarget, userId = "board", note?: string | null) => decideHire(target, "rejected", userId, note),
+    approveHire: (target: HireDecisionTarget, userId = "board", note?: string | null, decisionSource: string | null = null) => decideHire(target, "approved", userId, note, decisionSource),
+    rejectHire: (target: HireDecisionTarget, userId = "board", note?: string | null, decisionSource: string | null = null) => decideHire(target, "rejected", userId, note, decisionSource),
     async updateConfiguration(id: string, data: AgentConfigurationPatch, options?: UpdateAgentOptions) {
       const existing = await records.getById(id);
       if (!existing) return null;
