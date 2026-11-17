@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "20261117T151148Z--paperclip-s3s4-capacity-research",
+  "recorded_at": "2026-11-17T15:11:48Z",
+  "actor": "opensiro-ai-assistant",
+  "kind": "CHECKPOINT",
+  "contribution_id": "paperclip-s3-s4-adaptive-resource-feedback",
+  "evidence_urls": [
+    "https://github.com/opensiro/vsm-harness-index/blob/ad65433f7508f91e40577b676cfd1275dbcd0087/assessments/pa/paperclip.md",
+    "https://github.com/paperclipai/paperclip/issues/16504",
+    "https://github.com/paperclipai/paperclip/issues/3406",
+    "https://github.com/paperclipai/paperclip/pull/13379"
+  ],
+  "note": "Fork-local S3-S4 research only, requested without an external PR or Discord. System in focus: one Paperclip company. S3 decision owner: authorized CEO/manager or board, subject to existing hierarchy; S4 hypothesis: external/future capacity signal produces actionable alternatives that return via authorized S3 choice to subsequent agent execution. Matched scenario to validate: changing forecast capacity with competing commitments; observe whether an authorized adaptation changes later execution beyond a static scheduler/quota gate. Negative: unauthorized agent cannot set company-wide priorities. Historical S4 absence is NOT a current product failure. #16504 covers scheduled admission, #13379 covers subscription deferral, #3406 proposes CEO self-optimization; complete source and current PR overlap/native behavior remain unverified. Capability delta DELTA_PENDING (human report only), native tests NOT RUN, feature implementation NOT STARTED, no product branch, no public PR/issue.",
+  "next_action": "Inspect current source and open alternatives, then either establish a material distinct native capability delta for S3-S4 or close as overlap/no qualified improvement. Do not implement or publish while pending."
+}

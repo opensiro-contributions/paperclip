@@ -1,0 +1,26 @@
+{
+  "schema_version": 2,
+  "id": "paperclip-s3-s4-adaptive-resource-feedback",
+  "original_repository": "paperclipai/paperclip",
+  "title": "Research S3-S4 company resource-adaptation decision loop",
+  "contribution_type": "ASSESSMENT_INFORMED",
+  "classification_rationale": "The pinned 2026-09-18 Paperclip assessment establishes current S3 decision ownership and did not establish S4 at its historical source SHA. That informs this bounded capacity-adaptation research hypothesis, but does not prove a present capability gap or an earlier VSM prediction. Original #3406, #16504 and PR #13379 overlap; no material delta has yet been qualified.",
+  "classification_evidence": [
+    "https://github.com/opensiro/vsm-harness-index/blob/ad65433f7508f91e40577b676cfd1275dbcd0087/assessments/pa/paperclip.md",
+    "https://github.com/paperclipai/paperclip/issues/16504",
+    "https://github.com/paperclipai/paperclip/issues/3406",
+    "https://github.com/paperclipai/paperclip/pull/13379"
+  ],
+  "assessment_pin": {
+    "url": "https://github.com/opensiro/vsm-harness-index/blob/ad65433f7508f91e40577b676cfd1275dbcd0087/assessments/pa/paperclip.md",
+    "reviewed_at": "2026-09-18",
+    "assessed_source_revision": "352153b5edf02ff4262210c7bd5bfa94bcf37c7c"
+  },
+  "work_state": "RESEARCH",
+  "next_action": "At original master@c41ca4a9922dbd6dd84c43ba4371a111706b4d5c, verify whether current Paperclip already lets a legitimate CEO/manager/board choose between future capacity-adaptation options and apply the choice to later operations. Distinguish quota gate/queue in #16504 and #13379 from choice/feedback in #3406. Produce a source-native blocked outcome and native positive/negative/compatibility counterfactual. No implementation, fork-local review PR, external PR, external issue or Discord contact until material delta/formalities/consent are independently satisfied.",
+  "source_revision": "c41ca4a9922dbd6dd84c43ba4371a111706b4d5c",
+  "native_evidence": [],
+  "work_branches": [],
+  "external_prs": [],
+  "last_event_id": "20261117T151148Z--paperclip-s3s4-capacity-research"
+}
