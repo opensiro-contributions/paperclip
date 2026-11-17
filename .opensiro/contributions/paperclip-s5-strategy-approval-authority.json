@@ -1,0 +1,25 @@
+{
+  "schema_version": 2,
+  "id": "paperclip-s5-strategy-approval-authority",
+  "original_repository": "paperclipai/paperclip",
+  "title": "Reserve CEO strategy approval authority for designated board principals",
+  "contribution_type": "ASSESSMENT_INFORMED",
+  "classification_rationale": "The pinned September 2026 Paperclip VSM assessment identifies parent-board S5 strategy authority; original issue 18296 motivates optional approver-source restrictions, without an independently dated Index-first prediction.",
+  "classification_evidence": [
+    "https://github.com/opensiro/vsm-harness-index/blob/ad65433f7508f91e40577b676cfd1275dbcd0087/assessments/pa/paperclip.md",
+    "https://github.com/paperclipai/paperclip/issues/18296",
+    "https://github.com/paperclipai/paperclip/blob/c41ca4a9922dbd6dd84c43ba4371a111706b4d5c/server/src/routes/approvals.ts"
+  ],
+  "assessment_pin": {
+    "url": "https://github.com/opensiro/vsm-harness-index/blob/ad65433f7508f91e40577b676cfd1275dbcd0087/assessments/pa/paperclip.md",
+    "reviewed_at": "2026-09-18",
+    "assessed_source_revision": "352153b5edf02ff4262210c7bd5bfa94bcf37c7c"
+  },
+  "work_state": "RESEARCH",
+  "next_action": "Local RFC: .opensiro/proposals/paperclip-s5-strategy-approval-authority.md. Do not make a separate upstream issue; first recheck #18296, evaluate REST/plugin bypass paths and select a source-native safe implementation plan. No tests run or PR authorized.",
+  "source_revision": "c41ca4a9922dbd6dd84c43ba4371a111706b4d5c",
+  "native_evidence": [],
+  "work_branches": [],
+  "external_prs": [],
+  "last_event_id": "20261117T151044Z--paperclip-s5-local-rfc"
+}

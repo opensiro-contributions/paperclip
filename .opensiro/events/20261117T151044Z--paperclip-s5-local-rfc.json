@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "20261117T151044Z--paperclip-s5-local-rfc",
+  "recorded_at": "2026-11-17T15:10:44Z",
+  "actor": "opensiro-ai-assistant",
+  "kind": "CHECKPOINT",
+  "contribution_id": "paperclip-s5-strategy-approval-authority",
+  "decision": "LOCAL_RESEARCH_ONLY",
+  "evidence_urls": [
+    "https://github.com/opensiro/vsm-harness-index/blob/ad65433f7508f91e40577b676cfd1275dbcd0087/assessments/pa/paperclip.md",
+    "https://github.com/paperclipai/paperclip/issues/18296",
+    "https://github.com/paperclipai/paperclip/blob/c41ca4a9922dbd6dd84c43ba4371a111706b4d5c/server/src/routes/approvals.ts",
+    "https://github.com/paperclipai/paperclip/blob/c41ca4a9922dbd6dd84c43ba4371a111706b4d5c/server/src/services/plugin-host-services.ts"
+  ],
+  "note": "User requested a local-only formulation, without external PR. Added source-pinned RFC and separate ASSESSMENT_INFORMED record for strategic decision authorization; existing decision-source code and its stable record unchanged. No direct VSM tests, native tests or CI. No third-party issue, comment, PR, or Discord.",
+  "next_action": "Review local RFC; keep proposal distinct from audit-only decision_source work; qualify capability before any code; public fork-local PR would require exact later consent."
+}
