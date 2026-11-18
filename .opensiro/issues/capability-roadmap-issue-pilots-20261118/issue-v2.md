@@ -3,19 +3,15 @@
 **Opensiro pilot · PLAN_ONLY / NEEDS_EVIDENCE · DRAFT — NOT PUBLISHED**  
 **Two-level package:** this **human decision Issue** + [complete agent/developer contract](https://github.com/opensiro-contributions/paperclip/blob/opensiro/meta/.opensiro/issues/capability-roadmap-issue-pilots-20261118/constructor-sufficiency-v2.md) (source mapping, five ports per function, 10 S4 and 6 S3 proposed acceptance scenarios).
 
+## 1. Why Opensiro and central accepted VSM assessment
+
+Opensiro tests whether reusable, Viable System Model (VSM)-informed organization specifications can **standardize AI-agent harness development and reduce the total cost of implementation, integration and maintenance**. Through source-backed upstream roadmaps, we structure **existing and proposed native features** into a shared methodology, seeking capabilities developers can reuse or compose rather than duplicating ad-hoc solutions. **Reduced cost and user demand remain hypotheses, not proven outcomes; Paperclip does not have to adopt VSM.**
+
+### Central starting point — accepted Index, not the target
+
 > **STARTING POINT — ACCEPTED INDEX, NOT THE TARGET**  
 > **`S1=A  ·  S2=A  ·  S3=A(P)  ·  S3*=A  ·  S4=—  ·  S5=P`**  
 > [Accepted Paperclip assessment](https://github.com/opensiro/vsm-harness-index/blob/975a58814b767cfca414c152480f787bfe80944b/assessments/pa/paperclip.md), reviewed **2026-11-17** at `7f986789…` (Profile 0.2.4 / Skills 0.3.8). These are historical function-specific owner states; the proposed features do **not** change them.
-
-## 1. Decision to make
-
-**Primary P0 / S4:** investigate the smallest useful first-party **`C` constructor** for an agent that can assess an *external/future* model change, choose among `hold` and plausible adaptation options, and return an authorized change to subsequent company operations **with actual feedback to S3**. A notification or router alone is **not** S4 closure.
-
-**Separate P2-S3 proposal:** allow a developer to compose a **bounded current-resource S3 agent** that can decide how to resolve competing company commitments (e.g. defer/reprioritize/safe reassign) and observe the implemented result. **S3 already is `A(P)`**; this optional product feature is **not `A(P) → C`** or a compulsory grade improvement.
-
-**Why Opensiro:** test whether reusable VSM-informed contracts reduce harness engineering cost versus Paperclip's simplest native mechanism. **User demand and savings are unverified.**
-
-## 2. Accepted baseline — central evidence
 
 | VSM function | Index | Meaning for this pilot |
 | --- | --- | --- |
@@ -27,6 +23,12 @@
 | S5 · Identity/policy | **`P`** | Keep board's reserved ultimate authority |
 
 **Pins:** accepted [Index](https://github.com/opensiro/vsm-harness-index/blob/975a58814b767cfca414c152480f787bfe80944b/assessments/pa/paperclip.md), assessment blob `238863a500491b7851fa90478ae64b2471acb219`, reviewed 2026-11-17 at `7f986789…`; original [Paperclip `f5f60cfcb2…`](https://github.com/paperclipai/paperclip/commit/f5f60cfcb2a69511cb0564da0615e95f6c935251) was separately inspected on 2026-11-18. Original `master` has advanced: re-check before implementation. Boundary is **one Paperclip company in supported first-party OSS mode**, excluding uninstalled plugins and Paperclip maintainers' organization.
+
+## 2. Proposed user capabilities and decision
+
+**Primary P0 / S4:** investigate the smallest useful first-party **`C` constructor** for an agent that can assess an *external/future* model change, choose among `hold` and plausible adaptation options, and return an authorized change to subsequent company operations **with actual feedback to S3**. A notification or router alone is **not** S4 closure.
+
+**Separate P2-S3 proposal:** allow a developer to compose a **bounded current-resource S3 agent** that can decide how to resolve competing company commitments (e.g. defer/reprioritize/safe reassign) and observe the implemented result. **S3 already is `A(P)`**; this optional product feature is **not `A(P) → C`** or a compulsory grade improvement.
 
 ## 3. Existing native work vs missing capability
 

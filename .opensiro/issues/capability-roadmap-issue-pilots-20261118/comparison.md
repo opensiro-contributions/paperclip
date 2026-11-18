@@ -6,9 +6,9 @@
 
 | Reviewer task | v1 — historical one-file draft | v2 — approved two-level pilot |
 | --- | --- | --- |
-| First read | [Seven-section full Issue](issue-v1.md) | [Short human decision Issue](issue-v2.md), eight sections |
+| First read | [Seven-section full Issue](issue-v1.md) | [Short human decision Issue](issue-v2.md), eight sections; **Opensiro purpose FIRST → accepted six-function baseline SECOND → proposals THIRD** |
 | Detailed agent implementation and tests | Mixed into Issue prose | [Separate complete contract](constructor-sufficiency-v2.md), linked from Issue |
-| Central baseline | Inline vector | Prominent starting-state vector and six-row explanation |
+| Central baseline | Inline vector | **Mandatory central starting-state vector and six-row explanation immediately after Opensiro purpose**, before proposals |
 | C-first goal | Conditional/less explicit | **P0 S4 `— → C` candidate**; P1 necessary prerequisites |
 | Existing S3 autonomy | S3-related improvements mixed with S4 | **S3=A(P)** remains sufficient for default roadmap; **P2-S3** is a distinct, optional developer-composable current-control feature |
 | Materiality and minimal scope | Native alternative and generic checks | Shipped vs original Issues/PRs vs truly missing; explicit `NEEDS_EVIDENCE` stop |

@@ -5,7 +5,7 @@
 
 ## Read this case in two levels
 
-1. **[Issue v2 — human decision surface](issue-v2.md)** — a concise, eight-section review: the accepted historical six-function Index vector as the **central starting point**, user/operator outcomes, source-native overlap, **P0 S4**, necessary P1 work, **optional P2-S3** and go/no-go gates. It links to full evidence rather than embedding all hypothetical API contracts.
+1. **[Issue v2 — human decision surface](issue-v2.md)** — a concise, eight-section review in the mandatory order: **why Opensiro exists and is testing lower harness engineering costs → central accepted historical six-function Index vector with all states and interpretations → user/operator outcomes, source-native overlap, P0 S4, necessary P1, optional P2-S3 and go/no-go gates**. The purpose must appear before the vector, and the vector before the solution pitch. It links to full evidence rather than embedding all hypothetical API contracts.
 2. **[Constructor sufficiency v2 — developer/agent contract](constructor-sufficiency-v2.md)** — exact function boundaries (S2/S3/S4/S5), proposed five-port S4 future-adaptation construction path, separate five-port S3 present-resource constructor proposal, authority rules, current source anchors and **10 S4 + 6 S3** proposed native positive/negative test scenarios. None has been run.
 
 **[issue-v1.md](issue-v1.md)** is an unchanged historical comparison draft under the old seven-section template; [comparison.md](comparison.md) records format differences and source-freshness limits. Do not publish both as separate Issues.
