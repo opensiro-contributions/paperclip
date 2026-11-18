@@ -2,7 +2,18 @@
 
 **Canonical storage:** `opensiro-contributions/paperclip@opensiro/meta:.opensiro/issues/capability-roadmap-issue-pilots-20261118/`.
 
-**Status:** `PLAN_ONLY / NEEDS_EVIDENCE`, prepared 2026-11-18. **DRAFT — NOT PUBLISHED.** Conceptual construction contract; **not shipped**, not a completed implementation, test result, verified deficiency, Index reassessment or additional original maintainer request. **Issue:** [v2](issue-v2.md). This contract belongs to this case, not to the historical Paperclip roadmap that may be retired. It contains **two distinct designs**: **P0 S4 `— → candidate C`** and the **explicitly requested P2-S3 constructor extension** alongside existing `S3=A(P)`. Neither is shipped or a new accepted grade.
+**Status:** `PLAN_ONLY / NEEDS_EVIDENCE`, prepared 2026-11-18. **DRAFT — NOT PUBLISHED.** Conceptual construction contract; **not shipped**, not a completed implementation, test result, verified deficiency, Index reassessment or additional original maintainer request. **Issue:** [short human decision surface](issue-v2.md). This is **Level 2 — the full technical evidence and acceptance appendix**, not a second Issue. The parent Issue contains the decision, accepted baseline, proposed minimal paths and stop gates; this file keeps detailed source candidates, implementation questions and proposed native tests. This contract belongs to this case, not to the historical Paperclip roadmap that may be retired. It contains **two distinct designs**: **P0 S4 `— → candidate C`** and the **explicitly requested P2-S3 constructor extension** alongside existing `S3=A(P)`. Neither is shipped or a new accepted grade.
+
+## Functional scope: S2 vs S3 vs S4 vs S5
+
+| Function | Organizational decision, not an implementation mechanism | Example in this Paperclip pilot |
+| --- | --- | --- |
+| **S2 coordination** | Prevent harmful interference among operational units; a queue or lock may enforce coordination but does not automatically own S3 resource discretion | One task checkout or run slot is protected against competing claims |
+| **S3 present management** | Whole-company bargaining over **current** resources, performance, priorities, capacity and intervention, with real authority and return into active operations | A scoped agent chooses which current commitments to defer, reprioritize or safely reassign; deterministic budget/dispatch gates **enforce** but do not themselves choose the S3 trade-off |
+| **S4 outside/future intelligence** | Interpret **external changes or possible futures**, develop alternative adaptations and exchange prospective decisions with the **actual current S3 capability** | Compare a model deprecation/change with hold/adapt options, lawfully stage a future capability, observe next eligible run and return evidence to S3 |
+| **S5 identity/ultimate policy** | Resolve reserved purpose/authority choices and tensions S3/S4 cannot lawfully settle | Board-approved policy, budget and protected approval boundaries remain binding |
+
+**Classification safeguards:** current resource optimization is not automatically S4 just because it changes next week's schedule; a release announcement, router, memory write or model switch is not automatically S4 without prospective options and two-way operational closure. A deterministic admission gate is not S3 merely because it enforces a budget. Existing S3 `A(P)` is already a legitimate autonomous mode; the optional S3 constructor is a **distinct developer-composability feature**, not a downgrade, regrade, or prerequisite for the S4 P0 target.
 
 ## 1. Boundary, state, user and developer counterfactual
 

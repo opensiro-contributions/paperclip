@@ -1,121 +1,78 @@
-# Paperclip — C-first capability roadmap: S4 constructor and independent S3 composability pilot
+# Paperclip — S4 construction roadmap + optional S3 composability (v2)
 
-**PLAN_ONLY · NEEDS_EVIDENCE · DRAFT — NOT PUBLISHED.**  
-**Destination, if separately approved:** public GitHub Issue at `opensiro-contributions/paperclip` (GitHub Issues currently disabled).  
-**Template:** [Opensiro Upstream approved v2](https://github.com/opensiro/upstream/blob/e18aaccaed261cfc7493e2c894e1c12fb9594d60/templates/FORK_CAPABILITY_ROADMAP_ISSUE.md) · **Acceptance contract:** [local S4 sufficiency contract](https://github.com/opensiro-contributions/paperclip/blob/opensiro/meta/.opensiro/issues/capability-roadmap-issue-pilots-20261118/constructor-sufficiency-v2.md).  
-**Observation date:** 2026-11-18 UTC. **This is a design target, not a published Issue, product change, proven grade or verified saving.**
+**Opensiro pilot · PLAN_ONLY / NEEDS_EVIDENCE · DRAFT — NOT PUBLISHED**  
+**Two-level package:** this **human decision Issue** + [complete agent/developer contract](https://github.com/opensiro-contributions/paperclip/blob/opensiro/meta/.opensiro/issues/capability-roadmap-issue-pilots-20261118/constructor-sufficiency-v2.md) (source mapping, five ports per function, 10 S4 and 6 S3 proposed acceptance scenarios).
 
-> **START HERE — ACCEPTED INDEX ASSESSMENT:** **`S1=A  ·  S2=A  ·  S3=A(P)  ·  S3*=A  ·  S4=—  ·  S5=P`**. This pinned, historical vector is the **central evidence baseline**, not a roadmap goal or an assessment of every new commit. See the expanded function-by-function table in §2.
+> **STARTING POINT — ACCEPTED INDEX, NOT THE TARGET**  
+> **`S1=A  ·  S2=A  ·  S3=A(P)  ·  S3*=A  ·  S4=—  ·  S5=P`**  
+> [Accepted Paperclip assessment](https://github.com/opensiro/vsm-harness-index/blob/975a58814b767cfca414c152480f787bfe80944b/assessments/pa/paperclip.md), reviewed **2026-11-17** at `7f986789…` (Profile 0.2.4 / Skills 0.3.8). These are historical function-specific owner states; the proposed features do **not** change them.
 
-## 1. Goal
+## 1. Decision to make
 
-Opensiro tests whether source-native integration of reusable organizational capabilities, informed by the Viable System Model (VSM), can standardize and reduce the cost of engineering AI-agent harnesses. Neither cost advantage nor maintainer demand is established.
+**Primary P0 / S4:** investigate the smallest useful first-party **`C` constructor** for an agent that can assess an *external/future* model change, choose among `hold` and plausible adaptation options, and return an authorized change to subsequent company operations **with actual feedback to S3**. A notification or router alone is **not** S4 closure.
 
-**Operator counterfactual:** after a provider announces a model deprecation, release or material compatibility change, an operator of one Paperclip company should be able to **configure a bounded autonomous agent to compare `hold` with compatible future alternatives, let it exercise a delegated S4 option-selection right, enforce protected approvals, and verify that the authorized choice actually affected a subsequent eligible agent run**. Today an operator can inspect vendor release notes and manually adjust settings; the incremental value of a new first-party workflow must be verified.
+**Separate P2-S3 proposal:** allow a developer to compose a **bounded current-resource S3 agent** that can decide how to resolve competing company commitments (e.g. defer/reprioritize/safe reassign) and observe the implemented result. **S3 already is `A(P)`**; this optional product feature is **not `A(P) → C`** or a compulsory grade improvement.
 
-**Default C-first target:** `S4: — → proposed C`, not an automatic assessment result. **Additional requested product experiment:** a developer-composable **S3 current-control constructor** for choosing bounded allocation/priority interventions *alongside* the already established `S3=A(P)` arrangement. This is an **explicit optional new capability**, not a requirement to relabel `A(P)` as `C` or a claim that `A` implies `C`. Other accepted `A`/`A(P)` functions remain outside mandatory C work; legitimate `S5=P` board authority is preserved.
+**Why Opensiro:** test whether reusable VSM-informed contracts reduce harness engineering cost versus Paperclip's simplest native mechanism. **User demand and savings are unverified.**
 
-## 2. Evidence baseline
+## 2. Accepted baseline — central evidence
 
-### Accepted Index assessment — central starting point for this roadmap
-
-> **BASELINE / VERIFIED HISTORICAL SOURCE** · [Index Paperclip assessment](https://github.com/opensiro/vsm-harness-index/blob/975a58814b767cfca414c152480f787bfe80944b/assessments/pa/paperclip.md) · reviewed **2026-11-17**, original `7f9867895c4e7e9589b233a93aa9efceb0c992d0` · Profile **0.2.4** / Skills **0.3.8**. Every proposed improvement below is evaluated *against this accepted vector* and checked against a separately pinned newer source; none of these proposals changes it.
-
-| VSM system | Organizational function in one Paperclip company | **Accepted Index state** | Roadmap interpretation — what changes? |
-| --- | --- | --- | --- |
-| **S1 · Operations** | Report agents execute and close assigned company work | **`A` · Autonomous** | Already an agent-owned operational loop; **no C work required** |
-| **S2 · Coordination** | Managers coordinate agents, assignments and task dependencies | **`A` · Autonomous** | Existing coordination remains protected; no compulsory C construction |
-| **S3 · Current management** | CEO/managers regulate active budgets, priorities, accountability and resources; board has a distinct override mode | **`A(P)` · Autonomous + parent mode** | **Already operational.** New *optional S3 constructor* aims to let a developer compose a **different bounded S3 decision agent**, not lower or upgrade the accepted state |
-| **S3* · Independent review** | Separate reviewers verify completed work and can request corrections | **`A` · Autonomous** | Preserve reviewer independence; no constructor deficit inferred |
-| **S4 · Future adaptation** | External/future model change → alternatives → choice → changed future operating capability | **`—` · No sufficient first-party path established at assessed ref** | **Primary P0 target: proposed `C` constructor**, conditional on user need and native proof |
-| **S5 · Identity/policy** | Legitimate board decides strategy, company purpose and reserved policy | **`P` · Parent-governed** | Preserve board authority; no forced transfer or S5=C target |
-
-**How to read the states:** `A` means an autonomous actor closes a function; `C` means a **developer-composable function-specific** first-party path. **`A` does not imply `C`**, and neither is a higher maturity grade. **`A(P)` is not a missing function**. `—` is an evidence-bounded negative finding, *not* universal impossibility. The accepted vector is the **starting diagnosis**, while S4 and optional S3 constructibility are **research proposals**, not Index scores.
-
-- **Original source:** [`paperclipai/paperclip@f5f60cfcb2a69511cb0564da0615e95f6c935251`](https://github.com/paperclipai/paperclip/commit/f5f60cfcb2a69511cb0564da0615e95f6c935251) on original `master`, observed 2026-11-18. Current-source inspection here is focused, **not** a complete semantic re-assessment.
-- **Accepted Index assessment:** [Paperclip pinned assessment](https://github.com/opensiro/vsm-harness-index/blob/975a58814b767cfca414c152480f787bfe80944b/assessments/pa/paperclip.md); assessment blob `238863a500491b7851fa90478ae64b2471acb219`, `review_ref=7f9867895c4e7e9589b233a93aa9efceb0c992d0`, `reviewed_at=2026-11-17`, Profile `0.2.4`, Skills `0.3.8`. **See the accepted vector table above.** Review age at the 2026-11-18 observation: **1 calendar day**. Source `master` has since advanced; the accepted vector is historical, not a verdict about all new commits. A later original `master` was read at [`f05b90508abc…`](https://github.com/paperclipai/paperclip/commit/f05b90508abc5e25861c402c5f16d5f505929903); selected S3 budget/dispatch/CEO files were unchanged relative to the proposal pin, but the issue service changed. The **pilot's source-pinned conclusions remain at `f5f60cf…`**; re-evaluate before implementing.
-- **Working fork:** [`opensiro-contributions/paperclip`](https://github.com/opensiro-contributions/paperclip), verified parent `paperclipai/paperclip`; fork-local state `ACTIVE / ALLOW` on `opensiro/meta` observed for this metadata write, not permission for a public Issue/PR. **`has_issues=false`**.
-- **Case record:** [`.opensiro/issues/capability-roadmap-issue-pilots-20261118/`](https://github.com/opensiro-contributions/paperclip/tree/opensiro/meta/.opensiro/issues/capability-roadmap-issue-pilots-20261118); no new `.opensiro/contributions/` record for plan-only work.
-- **System boundary:** one Paperclip company in the supported OSS first-party server, API, UI, agents, goals/tasks, runtime routing, budget, execution-policy review and board. Exclude the maintainer's development organization, uninstalled plugin actors and private Cloud extensions.
-- **Contributor rights:** [MIT](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/LICENSE); [CONTRIBUTING](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/CONTRIBUTING.md) requires issue/PR dedupe, tests and AI disclosure, with prior Discord discussion for larger core changes. **No Discord or maintainer outreach. CLA exemptions not verified.** No code or external publication consent is inferred.
-
-## 3. Existing work and remaining gaps
-
-| VSM function / operator need | Shipped first-party source (at pinned HEAD) | Original Issues/PRs and live state at observation | Remaining operator outcome |
-| --- | --- | --- | --- |
-| **S4 / prospective model adaptation** | [Experimental AI connection routing service](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/server/src/services/ai-connection-router.ts) and [router operating contract](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/doc/connections/AI-CONNECTION-ROUTERS.md) provide capability/authorization checks and connection selection; routers are flag-gated and plugin-owned, not a demonstrated source-attributed external/future-option decision loop | [#20848](https://github.com/paperclipai/paperclip/issues/20848) **OPEN**, notifications/compatibility-aware model upgrades; [#16954](https://github.com/paperclipai/paperclip/issues/16954) **OPEN**, OSS router proposal; [PR #14967](https://github.com/paperclipai/paperclip/pull/14967) **MERGED**, task-pinned routing | First-party, company-scoped **signal → options → developer-composed agent decision → authorized future-use change → actual later-run feedback** |
-| **S3 / present resource regulation and proposed composability** | Existing company budget/agent control documented by [board delegation](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/docs/guides/board-operator/delegation.md); accepted baseline `S3=A(P)` | [#3406](https://github.com/paperclipai/paperclip/issues/3406), [#16504](https://github.com/paperclipai/paperclip/issues/16504) **OPEN**; [PR #13379](https://github.com/paperclipai/paperclip/pull/13379) **OPEN/unmerged** at `43b61148378cc045ff0eda5ad0f5b754c496b4be` | **Already A(P).** *Additional developer request:* configure an independent bounded S3 allocation/priority agent through a function-specific first-party contract, without replacing built-in management or bypassing board constraints. **Not yet demonstrated necessary** |
-| **S5 / reserved strategic authority** | [Board strategy approval lifecycle](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/docs/guides/board-operator/delegation.md) and [approval routes](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/server/src/routes/approvals.ts); accepted baseline `S5=P` | [#18296](https://github.com/paperclipai/paperclip/issues/18296) **OPEN** decision-source constraints; [PR #17857](https://github.com/paperclipai/paperclip/pull/17857) **OPEN/unmerged** at `b6cd49d4b6926fae61a2c68a31ce7c659b69eaa6` | **No automatic S5 change.** S4 agent must not acquire reserved board powers; existing authority gaps are dependency questions only |
-| **S3* / independent review** | [Execution policy](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/docs/guides/execution-policy.md) enforces distinct review and approval stages; accepted baseline `S3*=A` | [PR #15265](https://github.com/paperclipai/paperclip/pull/15265) **OPEN/unmerged** at `28183072c57ef8f035a0851aed2e03f4df9b7f77` | Keep reviewer separation intact. No S3* constructor target |
-
-**Native baseline:** operator reads model-release announcements, checks configured model/provider/account/adapter compatibility, performs an approved manual future-use update and observes the next run. This may be enough: **if it achieves the same outcome at lower cost, prefer `NO_USEFUL_CHANGE`**.
-
-## 4. VSM capability targets and prioritized development plan
-
-**Target matrix — required C sufficiency analysis**
-
-| Function | Historical Index | Current-source evidence / uncertainty | Target | Minimum necessary changes | Sufficiency status |
-| --- | --- | --- | --- | --- | --- |
-| **S4** | `—` | Experimental router checks model eligibility and authorization but does not, from inspected paths, establish the complete first-party outside/future → choice → operation feedback loop; full-source equivalence audit pending | **`C` design candidate** | Reuse native router/agent/board primitives and [#20848](https://github.com/paperclipai/paperclip/issues/20848) discussion; add attributable future signal, persisted `hold/change` options, S4-specific developer-composable decision port, authority-constrained future-use bridge and actual later-run observation | **`NEEDS_EVIDENCE`** pending current-source overlap, demand and integration feasibility; **no shipped/Index-confirmed `C`** |
-| S1 / S2 / S3* | `A` / `A` / `A` | Preserve task, coordination and reviewer invariants | **No mandatory `C` targets** | None for C; compatibility tests as needed | Historical autonomous modes are not proof of generic constructors, but no extra construction requirement |
-| **S3** | **`A(P)`** | Existing CEO/manager control, [budgets](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/server/src/services/budgets.ts), [task issue ownership](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/server/src/services/issues.ts), [run-dispatch invariants](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/server/src/modules/run-dispatch/domain/policy.ts); **new constructor gap not proved** | **Requested secondary S3 constructor capability** (not `A(P) → C` grade transition) | Propose first-party **current-pressure snapshot, intervention option set, developer-composable S3 decision port, authorized operational apply, and later-run outcome receipt**; compare existing [#3406](https://github.com/paperclipai/paperclip/issues/3406), [#16504](https://github.com/paperclipai/paperclip/issues/16504), [PR #13379](https://github.com/paperclipai/paperclip/pull/13379) | **`NEEDS_EVIDENCE`** for independent user demand, native interface gap and constructor test; accepted S3 remains `A(P)` |
-| S5 | `P` | Human board controls purpose/strategy; later source/authority differences not fully audited | Preserve `P`; **no present S5=C mandate** | Ensure S4 agent cannot mint or bypass board authority. An optional S5 constructor needs separately established demand/authority | **Legitimate parent `P` remains; do not alter Index** |
-
-**P0 — S4 C-constructor sufficiency target:** propose only a *minimal* supported first-party route in which a developer can compose an autonomous S4 evaluator and bind a lawful option-selection right, from an external model-change signal through next-run evidence. **P0 is the outcome, not the first operation in implementation order.**
-
-**P1 — necessary enabling integration:** company-scoped eligibility and grants, adapter/model/version compatibility, reserved board/approval enforcement, stale/revoked decision rejection, and later-run effective-state receipts. **P1 prerequisites execute before P0 can be delivered.** Original #3406/#16504/#18296 and PR #13379/#17857 are overlap/dependency evidence only: they do **not** all have to merge for S4=C.
-
-**P2-S3 — explicit secondary constructor study (new features, not required to repair S3):** compose a company-scoped S3 controller that can choose `hold / reprioritize / defer / bounded reassign` for **current** competing work commitments, enforce the decision through existing budget/task ownership/dispatch gates, and observe the next eligible operation. The five proposed ports and independent acceptance cases are specified in the [constructor contract](https://github.com/opensiro-contributions/paperclip/blob/opensiro/meta/.opensiro/issues/capability-roadmap-issue-pilots-20261118/constructor-sufficiency-v2.md). Validate whether this offers something the built-in CEO/manager already cannot provide. **Do not describe this as `A(P) → C`: the accepted S3 ownership mode is already `A(P)`; composability is a distinct product property.**
-
-**Other P2 — optional:** S4 canary/rollback, capacity forecasting and independently evidenced `C(P)` parent modes, only if useful. No universal `C → C(P) → A(P)` progression or `A → C` conversion requirement.
-
-| Priority | User-facing deliverable | Reuse → missing change | Actual dependencies | Decisive owner and acceptance |
-| --- | --- | --- | --- | --- |
-| P1.1 | Reliable candidate eligibility before an S4 choice | Existing router compatibility checks → source-attributed future signal and durable compatible `hold/change` case | Provider evidence, available adapter/account, company scope; [#20848](https://github.com/paperclipai/paperclip/issues/20848) dedupe | First-party source provenance + explicit unknown/incompatible refusal |
-| P1.2 | Safe delegation to future-option evaluator | Existing Paperclip agents + board/approval policy → **new S4-specific decision/feedback port**, scoped decision grant, snapshot versioning | Existing S3 budgets, S3* reviewer, S5 board; do not adopt unmerged PRs as shipped | Developer composes *real* autonomous actor; unauthorized/revoked/stale decisions fail closed |
-| P1.3 | Effect and observed feedback | Existing agent/run lifecycle → **future-run-only stage/apply and effective-run receipt** | Actual supported run entry points, state/compatibility checks | Applied or rejected decision appears in a subsequent eligible run and feeds back to S3/operator |
-| **P0** | **Construct a bounded S4 agent to choose among future operating options** | P1.1 + P1.2 + P1.3, validated as one first-party reachable pathway | All P1 gates; native delta and distribution validation | Positive/negative end-to-end examples demonstrate the precise S4 mapping required for a *possible subsequent `C` assessment* |
-| **P2-S3 (requested extension)** | **Developer can configure a bounded S3 allocator to resolve current competing agent commitments** | Reuse CEO/manager task and budget state → propose `S3PressureSnapshot`, `S3InterventionOptions`, `S3DecisionPort`, `S3ActionBridge`, `S3FeedbackReceipt` | Existing issue/assignment/checkout and [budget enforcement](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/server/src/services/budgets.ts), S2 owner invariants, S5 reserved policy; **independent of S4 P0** | A composed S3 agent chooses a lawful current-operation intervention, actual task/run state changes and later receipt confirms; negative cases reject non-owner/stale/board-reserved decisions. **No new S3 Index grade claimed; separately test the C-style constructor property** |
-| P2 | Optional canary, rollback or parent S4 mode | [#20848](https://github.com/paperclipai/paperclip/issues/20848) possibilities → independent case | P0 utility and rights; independent new evidence | Separate acceptance; **not necessary** for initial `C` target |
-
-**C sufficiency contract — S4 primary plus independent S3 extension:** [`constructor-sufficiency-v2.md`](https://github.com/opensiro-contributions/paperclip/blob/opensiro/meta/.opensiro/issues/capability-roadmap-issue-pilots-20261118/constructor-sufficiency-v2.md) provides S4's five required logical ports and ten acceptance cases **plus** a separate five-port S3 current-control constructor with independently falsifiable acceptance cases. All port names are **conceptual proposals**, not existing first-party APIs. Full reachability, native implementation and actual usability remain unverified. A complete *design* cannot prove shipped `C`.
-
-**Sufficiency verdict:** **`NEEDS_EVIDENCE` for implementation readiness of both the S4 primary and requested S3 construction extension**. The proposed five-part design is conditionally sufficient **if** it is delivered as accessible first-party function-specific composition rather than a generic extension and survives native real-run tests; original maintainer demand, current HEAD overlap, actual source fit and measured costs are not yet established.
-
-## 5. Acceptance, alternatives and stop conditions
-
-| Gate | Evidence required for the pilot hypothesis | No-change / negative case |
+| VSM function | Index | Meaning for this pilot |
 | --- | --- | --- |
-| Source-native overlap | Inspect current `master`, model/account router and any newer proposal or merged alternative; dedupe [#20848](https://github.com/paperclipai/paperclip/issues/20848) | Shipped path already provides the complete user task → `NO_USEFUL_CHANGE` |
-| Positive C path | A supplied, dated future release change produces `hold` and compatible future option; **developer-composed autonomous evaluator** selects a scoped option; run pipeline reflects authorized future-use revision and yields later-run receipt | Notification, mocked UI decision or manual-only action **is not a C proof** |
-| Negative rights/compatibility | Wrong-company agent, unknown compatibility, revoked grant, stale option and protected reviewer all fail without unauthorized next-run mutation | Unenforced decisions / missing observation → `NEEDS_EVIDENCE` or implementation blocked |
-| S3 positive current-control case | Developer-composed S3 agent observes two competing commitments under an actual company budget/priority constraint, picks one lawful `defer/reprioritize/reassign` intervention and receives later-run outcome | Existing CEO or simpler project-native settings achieve equivalent outcome, or the core alone chooses: no additional constructor value |
-| S3 negative/authority case | Non-company actor, conflicting checkout owner, stale resource snapshot or reserved board action fails closed; review policy remains enforced | A generic callback or policy bypass does not prove the proposed S3 construction feature |
-| Material operator value | The full native workaround and proposed constructor solve a *matched scenario*; measure changed user action, engineering/review/maintenance costs | Same outcome via smaller native change → reject new constructor |
-| Index evidence | Actually shipped first-party supported deployment and independent Skills/Index review | Issue/contract/open PR cannot itself change `S4=—` |
+| S1 · Operations | **`A`** | Autonomous work; no mandatory C work |
+| S2 · Coordination | **`A`** | Prevent destructive interference; retain owner/lock rules |
+| **S3 · Current management** | **`A(P)`** | Existing agent-managed resources + parent mode; **optional developer-composability**, not a missing function |
+| S3* · Independent review | **`A`** | Protect reviewer independence |
+| **S4 · Future adaptation** | **`—`** | **P0 C candidate**; no accepted first-party prospective loop at reviewed revision |
+| S5 · Identity/policy | **`P`** | Keep board's reserved ultimate authority |
 
-## 6. Independent development paths
+**Pins:** accepted [Index](https://github.com/opensiro/vsm-harness-index/blob/975a58814b767cfca414c152480f787bfe80944b/assessments/pa/paperclip.md), assessment blob `238863a500491b7851fa90478ae64b2471acb219`, reviewed 2026-11-17 at `7f986789…`; original [Paperclip `f5f60cfcb2…`](https://github.com/paperclipai/paperclip/commit/f5f60cfcb2a69511cb0564da0615e95f6c935251) was separately inspected on 2026-11-18. Original `master` has advanced: re-check before implementation. Boundary is **one Paperclip company in supported first-party OSS mode**, excluding uninstalled plugins and Paperclip maintainers' organization.
 
-1. **Original-native integration, preferred only if qualified:** first contribute information to the [existing #20848](https://github.com/paperclipai/paperclip/issues/20848) scope (no new external publication now); if a new C-specific interface is actually justified, plan one minimal source-native implementation through a separately authorized Upstream Upgrade, with product-native tests and contributor policy.
-2. **Profile or Skills feedback:** only for a reproducible methodology ambiguity; no Profile/Skills change implied.
-3. **Scoped domain fork:** only with legal permissions and a distinct domain hypothesis; original maintainers need not adopt it.
+## 3. Existing native work vs missing capability
 
-**Selected route now:** plan-only, verified source/Issue/PR gap analysis and design sufficiency. No code change, PR or communication authorized by this Issue.
+| Topic | What exists / relevant original proposals | Residual gap to prove |
+| --- | --- | --- |
+| **S4** | Experimental [connection router](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/server/src/services/ai-connection-router.ts); [PR #14967](https://github.com/paperclipai/paperclip/pull/14967) merged; model-release [#20848](https://github.com/paperclipai/paperclip/issues/20848) open | *Developer-composable S4 decision* about future alternatives, lawful capability change and observed later-run result |
+| **S3** | CEO/manager task and budget controls, [budget enforcement](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/server/src/services/budgets.ts); [#3406](https://github.com/paperclipai/paperclip/issues/3406) and [#16504](https://github.com/paperclipai/paperclip/issues/16504) open; [PR #13379](https://github.com/paperclipai/paperclip/pull/13379) open/unmerged | *Independent developer-composed S3 resource decision* beyond existing CEO and static throttling |
+| **Safety** | Existing board, task ownership and review; [#18296](https://github.com/paperclipai/paperclip/issues/18296) and [PR #17857](https://github.com/paperclipai/paperclip/pull/17857) open/unmerged | Enforce existing S2/S3*/S5 boundaries; **not a new S5 goal** |
 
-## 7. Value evaluation
+Original Issue/PR titles are **not proof of implemented interfaces**, and not all PRs are required dependencies. The actual shipped/missing split needs a current-source audit.
 
-**Matched native/manual task:** after the same provider model-change record, an operator confirms eligibility, checks S3 budget/S5 rights, stages an approved future model configuration and verifies the next eligible run.  
-**Matched VSM-informed task:** the same input and policies, but a developer-composed bounded S4 decision agent uses first-party compare/choose/stage/observe primitives.
+## 4. Proposed priority and minimum sufficient result
 
-**Additional matched S3 task (separate evaluation):** two agent commitments compete for a company-scoped current budget or execution slot. Compare the **existing CEO/manager's lawful reprioritization** with an **explicitly developer-composed S3 controller** selecting one permitted `hold/defer/reprioritize/reassign` option and observing the next task/run receipt. Measure configuration effort, authority safety and actual operator value independently of S4.  
-**Record:** implementation and integration effort, review/native test effort, maintenance and regression burden, decision validity, compatibility and effective later-run result. **`NOT_MEASURED`** — no cost advantage claimed.
+| Priority | Outcome | Conditional minimum construction path |
+| --- | --- | --- |
+| **P0 — S4** | Developer can compose prospective adaptation agent | **External signal → future options → scoped S4 agent decision → authorized future-operation change → actual outcome fed back to S3** |
+| **P1 — enables P0** | Safety and functioning first-party integration | Reuse existing compatibility, state, agent, board and run primitives; add only missing function-specific decision, enforcement and observation interfaces |
+| **P2-S3 — optional** | Compose a new current-management agent | **Company-wide current pressure → permissible resource options → scoped S3 agent decision → enforceable task/budget intervention → observed run/task receipt** |
 
-## 8. Decision and handoff
+**S3 and S4 are not interchangeable:** S2 handles interference/coordination; **S3 regulates current company-wide commitments and resources**; **S4 models environmental change and possible futures in a two-way relation with S3**; S5 governs identity and reserved policy. Neither a queue nor a model-release alert alone satisfies these functions.
 
-**`PLAN_ONLY / NEEDS_EVIDENCE`.** The **accepted Index vector above is the central starting point**. Proposed **P0 S4: `—` → candidate `C`**, with P1 eligibility/rights/feedback prerequisites. **New P2-S3 product extension:** a developer-composable current-control constructor *alongside accepted `S3=A(P)`* (not a conversion or claimed new Index grade). Already-`A` functions have no default compulsory C work; `S5=P` board rights remain protected.
+The [full contract](https://github.com/opensiro-contributions/paperclip/blob/opensiro/meta/.opensiro/issues/capability-roadmap-issue-pilots-20261118/constructor-sufficiency-v2.md) spells out five *proposed* first-party logical ports for each path. **Design coverage is conditional, not demonstrated shipped `C`.**
 
-**Next:** independently verify the S4 and S3 user needs and exact original source overlaps; map each proposed function-specific port to a first-party integration point and compare **S3's existing CEO resource decisions** against the suggested independently composable allocator. Check whether the simplest native workaround suffices for either. If the complete C path is materially useful, then separately authorize actual implementation and tests. If not, record `NO_USEFUL_CHANGE`—do not implement a controller for a grade.
+## 5. Acceptance / stop gates
 
-Full source and acceptance documentation: [case contract](https://github.com/opensiro-contributions/paperclip/blob/opensiro/meta/.opensiro/issues/capability-roadmap-issue-pilots-20261118/constructor-sufficiency-v2.md). Original [#20848](https://github.com/paperclipai/paperclip/issues/20848) already covers part of the outcome; do not duplicate it. The fork GitHub Issue is **not created** (`has_issues=false`); public fork Issue and every original Issue/comment/PR require **separate exact current-conversation approval**. No cross-owner issue transfer, automatic PR, Index regrading, delegated authority or cost result follows.
+| Required evidence | Fail-closed/no-change condition |
+| --- | --- |
+| **S4:** developer-composed agent autonomously selects among justified future alternatives, authorized later run uses the chosen capability, S3 receives feedback | Notification, plugin hook or manual edit only; no real run receipt |
+| **S3:** developer-composed agent selects company-wide *current* allocation response; task/run outcome confirms decision | Only S2 queue coordination, built-in CEO action or disconnected recommendation |
+| **Both:** legitimate actor and source revision, tenant/budget/reviewer/board checks, supported OSS availability | Stale, untrusted, cross-company or reserved decision changes state |
+| **Materiality:** comparison against simplest built-in CEO/manual router workflow, exact native diff | Equivalent native solution or no demonstrable user demand → `NO_USEFUL_CHANGE` |
 
-**AI disclosure:** Prepared with AI assistance using pinned original source and GitHub state. No independent human review, implementation, executed native tests or established cost reduction is claimed.
+**All 16 proposed tests are unexecuted.** Evidence of a supported constructor is not a new Index grade: a later independent assessment owns any classification.
+
+## 6. Independent paths
+
+**Preferred research:** reconcile shipped source and existing Paperclip Issues/PRs, then decide whether the minimal original-native integration is justified. Profile/Skills feedback or a domain fork are **independent, optional paths**, not automatic work.
+
+## 7. Cost hypothesis
+
+Compare the same task with native/manual and proposed S4 or S3 solutions, **separately**: operator outcome, implementation/integration, native tests, review, maintenance and safety. **`NOT_MEASURED`**; no proven cost saving.
+
+## 8. Decision / handoff
+
+**Decision now: `PLAN_ONLY / NEEDS_EVIDENCE`.** Do not commit to building both features. Validate **S4 P0 first**; evaluate S3 P2 only on a separate demonstrated developer need. For each proposed port, mark **shipped / already proposed / truly missing**, and select the smallest materially useful source-native change.
+
+**Agent/developer handoff:** [complete construction/acceptance contract](https://github.com/opensiro-contributions/paperclip/blob/opensiro/meta/.opensiro/issues/capability-roadmap-issue-pilots-20261118/constructor-sufficiency-v2.md); [case directory](https://github.com/opensiro-contributions/paperclip/tree/opensiro/meta/.opensiro/issues/capability-roadmap-issue-pilots-20261118). This is an internal **draft file**, not a public Issue. Public fork GitHub Issues are disabled; external Issue/PR, code implementation and Index regrade are not authorized by this plan. Paperclip [MIT](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/LICENSE) and [CONTRIBUTING](https://github.com/paperclipai/paperclip/blob/f5f60cfcb2a69511cb0564da0615e95f6c935251/CONTRIBUTING.md) remain applicable.
+
+**AI disclosure:** prepared with AI assistance; no independent human validation, executed native tests or cost measurements claimed.
