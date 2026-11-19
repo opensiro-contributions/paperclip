@@ -8,11 +8,20 @@
 
 **Decision:** `S4=— -> S4=C` **proposal-stage GO / research NEEDS_EVIDENCE** for a hypothetical opt-in future-model adaptation actor and lawful first-party outcome/return. This is NOT a shipped feature, new Index classification, native test pass, demonstrated benefit or maintainer agreement.
 
-**Provenance:** accepted [historical Index Paperclip assessment](https://github.com/opensiro/vsm-harness-index/blob/975a58814b767cfca414c152480f787bfe80944b/assessments/pa/paperclip.md) at `review_ref=7f9867895c4e7e9589b233a93aa9efceb0c992d0`; separately inspected current [original HEAD `3b978692ee725850888c5562e734a704cbb2d18b`](https://github.com/paperclipai/paperclip/commit/3b978692ee725850888c5562e734a704cbb2d18b) on 2026-11-19. The historical vector is not silently regraded. [Original #20848](https://github.com/paperclipai/paperclip/issues/20848) exists and is OPEN, so prefer compatible native discussion over an external duplicate.
+**Provenance:** accepted [historical Index Paperclip assessment](https://github.com/opensiro/vsm-harness-index/blob/394ce776e6945115891b8f7cc459f5a7f7d7aa39/assessments/pa/paperclip.md) at `review_ref=7f9867895c4e7e9589b233a93aa9efceb0c992d0`; separately inspected current [original HEAD `417802ca872e719f32ad447d7e69a8b77a802fd3`](https://github.com/paperclipai/paperclip/commit/417802ca872e719f32ad447d7e69a8b77a802fd3) on 2026-11-19. The historical vector is not silently regraded. [Original #20848](https://github.com/paperclipai/paperclip/issues/20848) exists and is OPEN, so prefer compatible native discussion over an external duplicate.
 
 **Publication:** fork `opensiro/meta` owner control was `ACTIVE/ALLOW` at readback; `has_issues=false` so no public fork Issue is enabled, and none has been created. No third-party Issue/comment/PR, product edit, additional authority or Index change is authorized by the metadata case. Exact separate owner consent applies to any external public publication.
 
 ---
+
+## Independent re-run at original HEAD 417802ca (2026-11-19)
+
+- [Pinned original](https://github.com/paperclipai/paperclip/commit/417802ca872e719f32ad447d7e69a8b77a802fd3) reviewed separately from [accepted included Index assessment](https://github.com/opensiro/vsm-harness-index/blob/394ce776e6945115891b8f7cc459f5a7f7d7aa39/assessments/pa/paperclip.md), reviewed 2026-11-17, historical vector S1=A · S2=A · S3=A(P) · S3*=A · S4=— · S5=P. Not a new Index grade.
+- Independent result: hypothetical opt-in source-native prospective S4=C model-adaptation constructor on top of original #20848; proposal GO, research NEEDS_EVIDENCE, validation NOT_RUN, cost NOT_MEASURED.
+- Important new-HEAD overlap: shipped internal Learning Agent/Reflection Coach is not itself an external-future S4. Original PR #17414 judge and #21097 quota router are still OPEN and should not be duplicated.
+- Comparison with earlier canonical case only after this independent decision: same P0 and proposal verdict, updated revision and narrower Track A coverage. The prior model-release-adaptation-20261117 and historical templates below remain historical.
+- Fork matched (fork=true / parent paperclipai/paperclip), owner ALLOW/ACTIVE, GitHub Issues disabled. Updated research case files are metadata, not a published fork/original Issue or implementation permission.
+- Handoff: [Human](issue.md), [AI](constructor-sufficiency.md), [canonical receipt](roadmap.md). No public Issue, comment, PR, test pass or autonomous Index reclassification claimed.
 
 ## Historical template pilots retained unchanged
 
