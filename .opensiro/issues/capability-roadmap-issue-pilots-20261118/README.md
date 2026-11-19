@@ -1,4 +1,24 @@
-# Paperclip capability roadmap — v2 two-level pilot
+# Paperclip — current OpenSiro Capability Roadmap case
+
+**Current research artifacts (2026-11-19, `PLAN_ONLY`, unpublished):**
+
+1. **[issue.md](issue.md)** — current Human Roadmap using the reduced single six-function table.
+2. **[constructor-sufficiency.md](constructor-sufficiency.md)** — function-neutral technical C-constructor contract, independent from a mandatory five-port/nine-test format.
+3. **[roadmap.md](roadmap.md)** — **canonical** source-pinned `proposal-gate` receipt, six-function dispositions, P0/P1/P2 and `GO + NEEDS_EVIDENCE` separation.
+
+**Decision:** `S4=— -> S4=C` **proposal-stage GO / research NEEDS_EVIDENCE** for a hypothetical opt-in future-model adaptation actor and lawful first-party outcome/return. This is NOT a shipped feature, new Index classification, native test pass, demonstrated benefit or maintainer agreement.
+
+**Provenance:** accepted [historical Index Paperclip assessment](https://github.com/opensiro/vsm-harness-index/blob/975a58814b767cfca414c152480f787bfe80944b/assessments/pa/paperclip.md) at `review_ref=7f9867895c4e7e9589b233a93aa9efceb0c992d0`; separately inspected current [original HEAD `3b978692ee725850888c5562e734a704cbb2d18b`](https://github.com/paperclipai/paperclip/commit/3b978692ee725850888c5562e734a704cbb2d18b) on 2026-11-19. The historical vector is not silently regraded. [Original #20848](https://github.com/paperclipai/paperclip/issues/20848) exists and is OPEN, so prefer compatible native discussion over an external duplicate.
+
+**Publication:** fork `opensiro/meta` owner control was `ACTIVE/ALLOW` at readback; `has_issues=false` so no public fork Issue is enabled, and none has been created. No third-party Issue/comment/PR, product edit, additional authority or Index change is authorized by the metadata case. Exact separate owner consent applies to any external public publication.
+
+---
+
+## Historical template pilots retained unchanged
+
+The content below is the **2026-11-18 v1/v2 template comparison**, not the current source-backed decision or current filenames. All past `*-v2.md` case files remain untouched as historical comparison artifacts.
+
+# Historical v2 two-level pilot (2026-11-18)
 
 **Case owner/location:** `opensiro-contributions/paperclip@opensiro/meta:.opensiro/issues/capability-roadmap-issue-pilots-20261118/`  
 **Status:** `PLAN_ONLY / NEEDS_EVIDENCE · DRAFT — NOT PUBLISHED`, updated 2026-11-18.
