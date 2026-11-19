@@ -62,6 +62,17 @@ Opensiro investigates whether a reusable evidence-backed organizational model ca
 
 **Proposed C-sufficiency verdict:** PROPOSED_C_SUFFICIENT, **not shipping**, not a test pass and not a changed Index grade without separate Index review. Falsifiers: no lawful autonomous actor owner, no supported operative return path or native source already fully supplies the same constructor.
 
+### Fresh independent re-run at current original HEAD (2026-11-19)
+
+The historical accepted Index vector above is unchanged. The new original pin is [417802ca872e](https://github.com/paperclipai/paperclip/commit/417802ca872e719f32ad447d7e69a8b77a802fd3); the independent P0 decision preceded reading prior OpenSiro roadmap case verdicts. Whole-repository source survey included runtime/services, UI/CLI/plugins, docs, tests/CI and contributor governance; evidence boundaries are detailed in [roadmap.md](roadmap.md).
+
+- **Existing shipped work:** Paperclip now includes a default-paused Reflection Coach that reviews recent *internal* agent trajectories, proposes skill/instruction diffs and requires an accepted interaction before a separate follow-up applies them. This is useful but is not by itself external/future S4. [Source](https://github.com/paperclipai/paperclip/blob/417802ca872e719f32ad447d7e69a8b77a802fd3/server/src/built-ins/agents/reflection-coach/AGENTS.md).
+- **Original sources:** model lifecycle [#20848](https://github.com/paperclipai/paperclip/issues/20848) (issue, not shipped), learning journal [#3326](https://github.com/paperclipai/paperclip/issues/3326), open [Judge PR #17414](https://github.com/paperclipai/paperclip/pull/17414) and [router PR #21097](https://github.com/paperclipai/paperclip/pull/21097). The latter are not credited as merged capabilities.
+- **Incremental P0:** add only the missing S4-specific prospective-option, developer-composed decision and observed future-run/S3 feedback binding **on top of** the shipped Paperclip tools. Keep board S5, manager S3, reviewers and active runs unchanged.
+- **Decision:** GO on a credible source-native complete design, **NEEDS_EVIDENCE** on user value/native integration, `NOT_RUN` and `NOT_MEASURED`. Falsify if equivalent first-party S4 is already shipped, the composed agent cannot own a lawful choice, or future-run effect plus return-to-S3 cannot be realized.
+- **Old-case comparison (consulted after decision):** the earlier model-release and template-pilot cases align on S4; the new source scan adds explicit shipped Reflection Coach versus open Judge/router work and a newer HEAD. No attribution to older case reasoning is claimed.
+
+
 ## 4. Priorities and minimum sufficient result
 
 - **P0:** optional S4=C developer-composed future-adaptation vertical slice; preserve native model routes and authority.
