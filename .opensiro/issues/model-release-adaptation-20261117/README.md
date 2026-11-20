@@ -1,21 +1,13 @@
-# Paperclip issue-local OpenSiro working record
+# Paperclip — canonical OpenSiro source-native S4 roadmap case
 
-This directory is the canonical **fork-local issue workspace** for the opt-in prospective model release/compatibility S4 hypothesis, related to [original Paperclip issue #20848](https://github.com/paperclipai/paperclip/issues/20848).
+This is the **existing stable fork-local case** model-release-adaptation-20261117, independently re-screened at Paperclip original master f4a3f85b89b2dae7889b0a9c7fee07ed47b554cb under Upstream v0.18.2 on 2026-11-20. It is internal PLAN_ONLY research, not a Paperclip implementation, Index grade, maintainer Issue or public publication.
 
-- [Source-pinned roadmap](roadmap.md) — PLAN_ONLY architecture investigation and existing issue/PR overlap.
-- [S4=C proposed construction/acceptance contract](constructor-acceptance.md) — engineering target and ten acceptance scenarios, **not** a shipped feature, assigned implementation or Index grade.
+- [roadmap.md](roadmap.md) — **canonical decision receipt**, authoritative source for Index acceptance and provenance, six function dispositions, P0/P1/P2, S4=— → proposed S4=C, GO / NEEDS_EVIDENCE, NOT_RUN and DRAFT — NOT PUBLISHED.
+- [issue.md](issue.md) — Human-facing eight-section decision and outcome proposal; **DRAFT — NOT PUBLISHED**.
+- [constructor-sufficiency.md](constructor-sufficiency.md) — six-section AI technical handoff, source-native Track A/B, proposed acceptance, falsifiers; NOT_RUN.
+- [constructor-acceptance.md](constructor-acceptance.md) — historic 2026-11-17 optional five-port/ten-acceptance example, **not** a mandatory current implementation template.
+- [fork-issue-draft.md](fork-issue-draft.md) — preexisting historical unpublished draft; no public Issue was opened or approved.
 
-**Location:** `opensiro-contributions/paperclip` branch `opensiro/meta`, under `.opensiro/issues/model-release-adaptation-20261117/`. Source code and native tests belong in authorized product branches if implementation is separately requested; record independent implemented contributions in `.opensiro/contributions/` according to the Upstream protocol.
+**Original:** [paperclipai/paperclip](https://github.com/paperclipai/paperclip). **Working fork:** opensiro-contributions/paperclip on opensiro/meta. **Index:** [accepted historic paperclip assessment](https://github.com/opensiro/vsm-harness-index/blob/a3fcf7c156ef4d1132680890bc11544681fd30c0/assessments/pa/paperclip.md), unchanged. **Coordination:** [Upstream #58 reservation](https://github.com/opensiro/upstream/issues/58#issuecomment-7047668460) and independent [sealed source-first reasoning](https://github.com/opensiro/upstream/issues/58#issuecomment-7047762363).
 
-The current canonical **general** VSM assessment remains in [Index](https://github.com/opensiro/vsm-harness-index/blob/main/assessments/pa/paperclip.md), not this case folder. These issue-local documents are not a second accepted assessment or a maintainer communication. Original issues/PRs remain owned by their original GitHub repository.
-
-**Migration:** The source artifacts were initially authored in `opensiro/upstream/docs/examples/` at commit `c870a6a756bea774012c48877ad5a12aa991e656`; following owner clarification they were relocated, not re-assessed.
-
-## Fork GitHub Issue publication preflight (2026-11-17)
-
-- **Draft title:** `research(S4): validate a composable model-adaptation decision loop`.
-- **Full draft:** [fork-issue-draft.md](fork-issue-draft.md) — **DRAFT — NOT PUBLISHED**.
-- **Actual public GitHub Issue:** **NOT CREATED** (no number or URL; do not invent one).
-- **Blocking setting:** GitHub repository `opensiro-contributions/paperclip` currently reports `has_issues=false`; Issues must be enabled through authorized repository settings before publication is technically possible.
-- **Approval:** the exact fork Issue destination/title/body still requires separate current-conversation publication consent. A draft file is not permission to publish, implement S4 or open a duplicate external Issue.
-- **Original overlap:** [paperclipai/paperclip#20848](https://github.com/paperclipai/paperclip/issues/20848) is already open; link it instead of opening another original issue merely to duplicate its scope.
+**Right boundary:** Fork metadata only, verified ACTIVE / ALLOW. No Paperclip original Issue/comment/PR, fork-public Issue/PR, product branch, autonomous S5 authority, release purchase or test success. External publication, source changes and future Index reassessment require independently authorized work.
